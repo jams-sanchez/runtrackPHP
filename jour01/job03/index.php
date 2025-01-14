@@ -1,7 +1,7 @@
-<?php 
+<?php
 
 $myBool = True;
-$myString = "This is a string"; 
+$myString = "This is a string";
 $myNum = 12;
 $myNumvirgule = 3.5;
 
@@ -10,11 +10,13 @@ $myNumvirgule = 3.5;
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tableau</title>
 </head>
+
 <body>
     <table>
         <tr>
@@ -42,9 +44,10 @@ $myNumvirgule = 3.5;
             <td>$myNumvirgule</td>
             <td><?php echo $myNumvirgule; ?></td>
         </tr>
-        
+
 
     </table>
 
 </body>
+
 </html>
