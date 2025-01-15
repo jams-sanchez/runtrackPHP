@@ -7,11 +7,11 @@ $strToTab = str_split($str);
 $countVoy = 0;
 $countCon = 0;
 
-$dic = array(
-    'voyelles' => array(),
-    'consonnes' => array(),
-    'caracteres' => array()
-);
+$dic = [
+    'voyelles' => [],
+    'consonnes' => [],
+    'caracteres' => []
+];
 
 foreach ($strToTab as $value) {
 
