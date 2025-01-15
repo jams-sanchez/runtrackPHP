@@ -1,7 +1,6 @@
 <?php
 
 $str = "Les choses que l'on possede finissent par nous posseder";
-$str = strtolower($str);
 
 // $strReverse = strrev($str);
 // echo $strReverse . "<br>";
