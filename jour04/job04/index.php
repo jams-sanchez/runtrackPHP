@@ -9,7 +9,7 @@
 
 <body>
 
-    <form action="index.php" method="get">
+    <form action="index.php" method="post">
         <p>
             <label for="nom">Nom:</label>
             <input type="text" name="nom" />
@@ -34,14 +34,14 @@
         <tr>
             <td>
                 <?php
-                foreach ($_GET as $key => $value) {
+                foreach ($_POST as $key => $value) {
                     echo $key . "<br>";
                 }
                 ?>
             </td>
             <td>
                 <?php
-                foreach ($_GET as $value) {
+                foreach ($_POST as $value) {
                     echo $value . "<br>";
                 }
                 ?>
