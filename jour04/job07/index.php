@@ -6,13 +6,12 @@ if (count($_GET) != 0) {
     $larg = $_GET["largeur"];
     $tot = $larg / $haut * 2;
 
-
     for ($j = 0; $j < $haut; $j++) {
-        echo str_repeat(".", $tot-- * 2) . "/" . str_repeat("_", $j * 2) . "\\ <br>";
+        echo str_repeat("\u{00A0}", $tot-- * 2) . "/" . str_repeat("_", $j * 2 + 2) . "\\ <br>";
     }
 
     for ($i = 0; $i < $haut; $i++) {
-        echo "|" . str_repeat("_", $larg) . "| <br>";
+        echo "|" . str_repeat("_", $larg) . "\n| <br>";
     }
 }
 
