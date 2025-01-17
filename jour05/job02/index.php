@@ -3,11 +3,11 @@
 function bonjour(bool $jour)
 {
     if ($jour == True) {
-        return "Bonjour";
+        echo "Bonjour";
     } else {
-        return "Bonsoir";
+        echo "Bonsoir";
     }
 }
 
-echo bonjour(True) . "<br>";
-echo bonjour(False);
+bonjour(True);
+bonjour(False);
