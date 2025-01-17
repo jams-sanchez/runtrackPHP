@@ -4,14 +4,15 @@ if (count($_GET) != 0) {
 
     $haut = $_GET["hauteur"];
     $larg = $_GET["largeur"];
-    $tot = $larg / $haut * 2;
+    // $tot = $larg / $haut * 2;
+
 
     for ($j = 0; $j < $haut; $j++) {
-        echo str_repeat("\u{00A0}", $tot-- * 2) . "/" . str_repeat("_", $j * 2 + 2) . "\\ <br>";
+        echo str_repeat("&nbsp;", $haut - $j) . "/" . str_repeat("_", $j * 2 + 1) . "\\ <br>";
     }
 
     for ($i = 0; $i < $haut; $i++) {
-        echo "|" . str_repeat("_", $larg) . "\n| <br>";
+        echo "|" . str_repeat("&nbsp;", $larg * 2) . "\n| <br>";
     }
 }
 
