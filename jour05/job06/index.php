@@ -1,45 +1,6 @@
 <?php
 
-// function leetSpeak($str)
-// {
-
-//     $str1 = strtolower($str);
-
-//     for ($i = 0; $i < strlen($str); $i++) {
-
-//         if ($str1[$i] == "a") {
-//             $str1[$i] = "4";
-//         } elseif ($str1[$i] == "b") {
-//             $str1[$i] = "8";
-//         } elseif ($str1[$i] == "d") {
-//             $str1[$i] = "[)";
-//         } elseif ($str1[$i] == "e") {
-//             $str1[$i] = "3";
-//         } elseif ($str1[$i] == "g") {
-//             $str1[$i] = "6";
-//         } elseif ($str1[$i] == "h") {
-//             $str1[$i] = "#";
-//         } elseif ($str1[$i] == "i") {
-//             $str1[$i] = "1";
-//         } elseif ($str1[$i] == "l") {
-//             $str1[$i] = "1";
-//         } elseif ($str1[$i] == "o") {
-//             $str1[$i] = "0";
-//         } elseif ($str1[$i] == "r") {
-//             $str1[$i] = "2";
-//         } elseif ($str1[$i] == "s") {
-//             $str1[$i] = "$";
-//         } elseif ($str1[$i] == "t") {
-//             $str1[$i] = "7";
-//         } else {
-//             $str1[$i];
-//         }
-//     }
-
-//     return $str1;
-// }
-
-// echo leetSpeak("salut, je m'appelle James");
+// test 1
 
 function leetSpeak($str)
 {
@@ -87,3 +48,78 @@ function leetSpeak($str)
 
 
 echo leetSpeak("Salut l'etranger, moi c'est James!");
+
+echo "<br>";
+
+
+// test 2
+
+function leetSpeak2($str)
+{
+
+    $letter = [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z"
+    ];
+
+    $char = [
+        "4",
+        "8",
+        "(",
+        "[)",
+        "3",
+        "|=",
+        "6",
+        "#",
+        "1",
+        "_|",
+        "|<",
+        "|_",
+        "|v|",
+        "^/",
+        "0",
+        "|*",
+        "(_,)",
+        "2",
+        "$",
+        "7",
+        "|_|",
+        "\/",
+        "\/\/",
+        "><",
+        "'/",
+        "=/="
+    ];
+
+    $str = strtolower($str);
+
+    $result = str_replace($letter, $char, $str);
+
+    return $result;
+}
+
+echo leetSpeak2("Salut l'etranger, moi c'est James!");
