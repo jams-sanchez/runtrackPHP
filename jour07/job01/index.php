@@ -3,13 +3,13 @@
 session_start();
 
 if (!isset($_SESSION["nbVisites"])) { // si nbVisites n'est pas créé
-    $_SESSION["nbVisites"] = 0; // créer et donne la valeur de 0 a nbVisites
+    $_SESSION["nbVisites"] = 0; // créer la clé nbVisites et donne la valeur de 0 a nbVisites
 } else {
     $_SESSION["nbVisites"]++; // si elle existe ajoute +1
 }
 
 if (isset($_POST["reset"])) { // si Reset
-    $_SESSION["nbVisites"] = 0; // reset nbVisites a 0
+    $_SESSION["nbVisites"] = 0; // reinitialise nbVisites a 0
     session_destroy(); // detruit la session
 }
 
