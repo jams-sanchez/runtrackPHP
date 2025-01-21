@@ -2,6 +2,7 @@
 
 function bold($text)
 {
+
     echo "<b> $text </b>";
 }
 
