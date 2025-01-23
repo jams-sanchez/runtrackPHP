@@ -2,10 +2,10 @@
 
 $bdd = new PDO('mysql:host=localhost;dbname=jour08', 'root', '');
 
-$salles = "SELECT * FROM salles";
-$stmt = $bdd->prepare($salles);
+$etudiantsF = "SELECT nom, prenom, naissance FROM etudiants WHERE sexe = 'Femme'";
+$stmt = $bdd->prepare($etudiantsF);
 $stmt->execute();
-$donneesSalles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$donneesEtudiantsF = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -23,17 +23,19 @@ $donneesSalles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <table>
         <tr>
+            <th>Prenom</th>
             <th>Nom</th>
-            <th>Capacité</th>
+            <th>Naissance</th>
         </tr>
 
         <?php
 
-        foreach ($donneesSalles as $value) {
+        foreach ($donneesEtudiantsF as $value) {
             echo
             "<tr>
-                <td>" . $value['nom'] . "</td>"
-                . "<td>" . $value['capacite'] . "</td>
+                <td>" . $value['prenom'] . "</td>"
+                . "<td>" . $value['nom'] . "</td>"
+                . "<td>" . $value['naissance'] . "</td>
             </tr>";
         }
 

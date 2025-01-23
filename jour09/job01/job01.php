@@ -3,9 +3,9 @@
 $bdd = new PDO('mysql:host=localhost;dbname=jour08', 'root', '');
 
 $etudiants = "SELECT * FROM etudiants";
-$donneesEtudiants = $bdd->prepare($etudiants);
-$donneesEtudiants->execute();
-$donneesEtudiants->fetch($bdd::FETCH_ASSOC);
+$stmt = $bdd->prepare($etudiants);
+$stmt->execute();
+$donneesEtudiants = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -33,18 +33,16 @@ $donneesEtudiants->fetch($bdd::FETCH_ASSOC);
 
         <?php
 
-        while ($listeEtudiants = $donneesEtudiants->fetch()) {
+        foreach ($donneesEtudiants as $value) {
             echo
             "<tr>
-                <td>" . $listeEtudiants['prenom'] . "</td>"
-                . "<td>" . $listeEtudiants['nom'] . "</td>"
-                . "<td>" . $listeEtudiants['naissance'] . "</td>"
-                . "<td>" . $listeEtudiants['sexe'] . "</td>"
-                . "<td>" . $listeEtudiants['email'] . "</td>
+                <td>" . $value['prenom'] . "</td>"
+                . "<td>" . $value['nom'] . "</td>"
+                . "<td>" . $value['naissance'] . "</td>"
+                . "<td>" . $value['sexe'] . "</td>"
+                . "<td>" . $value['email'] . "</td>
             </tr>";
         }
-
-        $donneesEtudiants->closeCursor();
         ?>
 
     </table>
