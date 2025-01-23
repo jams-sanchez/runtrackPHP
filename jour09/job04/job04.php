@@ -22,27 +22,32 @@ $donneesEtudiantsInT = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
     <table>
-        <tr>
-            <th>Prenom</th>
-            <th>Nom</th>
-            <th>Naissance</th>
-            <th>Sexe</th>
-            <th>Email</th>
-        </tr>
+        <thead>
+            <tr>
+                <th>Prenom</th>
+                <th>Nom</th>
+                <th>Naissance</th>
+                <th>Sexe</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
 
-        <?php
+            <?php
 
-        foreach ($donneesEtudiantsInT as $value) {
-            echo
-            "<tr>
+            foreach ($donneesEtudiantsInT as $value) {
+                echo
+                "<tr>
                 <td>" . $value['prenom'] . "</td>"
-                . "<td>" . $value['nom'] . "</td>"
-                . "<td>" . $value['naissance'] . "</td>"
-                . "<td>" . $value['sexe'] . "</td>"
-                . "<td>" . $value['email'] . "</td>
+                    . "<td>" . $value['nom'] . "</td>"
+                    . "<td>" . $value['naissance'] . "</td>"
+                    . "<td>" . $value['sexe'] . "</td>"
+                    . "<td>" . $value['email'] . "</td>
             </tr>";
-        }
-        ?>
+            }
+            ?>
+        </tbody>
+
 
     </table>
 </body>

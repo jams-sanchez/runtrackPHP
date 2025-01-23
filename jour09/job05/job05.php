@@ -2,7 +2,7 @@
 
 $bdd = new PDO('mysql:host=localhost;dbname=jour08', 'root', '');
 
-$etudiants = "SELECT * FROM etudiants";
+$etudiants = "SELECT * FROM etudiants WHERE (YEAR(NOW()) - YEAR(naissance)) >= 18";
 $stmt = $bdd->prepare($etudiants);
 $stmt->execute();
 $donneesEtudiants = $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -22,22 +22,25 @@ $donneesSalles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
     <table>
-        <tr>
-            <th>Nom</th>
-            <th>Capacité</th>
-        </tr>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Capacité</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
 
-        <?php
-
-        foreach ($donneesSalles as $value) {
-            echo
-            "<tr>
+            foreach ($donneesSalles as $value) {
+                echo
+                "<tr>
                 <td>" . $value['nom'] . "</td>"
-                . "<td>" . $value['capacite'] . "</td>
+                    . "<td>" . $value['capacite'] . "</td>
             </tr>";
-        }
+            }
 
-        ?>
+            ?>
+        </tbody>
 
     </table>
 </body>
