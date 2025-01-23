@@ -2,11 +2,10 @@
 
 $bdd = new PDO('mysql:host=localhost;dbname=jour08', 'root', '');
 
-$etudiants = "SELECT nom, prenom, naissance FROM etudiants WHERE YEAR(naissance) BETWEEN '1998' AND '2018'";
-$stmt = $bdd->prepare($etudiants);
+$sallesEtages = "SELECT salles.nom AS salles, etage.nom AS etages FROM salles INNER JOIN etage ON salles.id_etage = etage.id";
+$stmt = $bdd->prepare($sallesEtages);
 $stmt->execute();
-$etudiantTranche = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+$donneesSallesEtages = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -25,21 +24,19 @@ $etudiantTranche = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <table>
         <thead>
             <tr>
-                <th>Prenom </th>
-                <th>Nom </th>
-                <th>Naissance </th>
+                <th>Nom des salles </th>
+                <th>Nom des etages</th>
             </tr>
         </thead>
 
         <tbody>
             <?php
 
-            foreach ($etudiantTranche as $value) {
+            foreach ($donneesSallesEtages as $value) {
                 echo
                 "<tr>
-                <td>" . $value['prenom'] . "</td>"
-                    . "<td>" . $value['nom'] . "</td>"
-                    . "<td>" . $value['naissance'] . "</td>
+                <td>" . $value['salles'] . "</td>"
+                    . "<td>" . $value['etages'] . "</td>
             </tr>";
             }
             ?>
