@@ -1,1 +1,1 @@
-SELECT SUM(capacite) FROM salle;
+SELECT SUM(capacite) FROM salles;
