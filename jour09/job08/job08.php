@@ -2,10 +2,10 @@
 
 $bdd = new PDO('mysql:host=localhost;dbname=jour08', 'root', '');
 
-$etages = "SELECT SUM(superficie) AS nombre FROM etage";
-$stmt = $bdd->prepare($etages);
+$salles = "SELECT SUM(capacite) AS nombre FROM salles";
+$stmt = $bdd->prepare($salles);
 $stmt->execute();
-$superficieEtages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$capaciteSalles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 ?>
@@ -25,14 +25,14 @@ $superficieEtages = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <table>
         <thead>
             <tr>
-                <th>Superficie Totale </th>
+                <th>Capacité Totale </th>
             </tr>
         </thead>
 
         <tbody>
             <?php
 
-            foreach ($superficieEtages as $value) {
+            foreach ($capaciteSalles as $value) {
                 echo
                 "<tr>
                 <td>" . $value['nombre'] . "</td>
